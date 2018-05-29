@@ -2,7 +2,7 @@
 npm install
 git config --global user.name ${GIT_USER_NAME}
 git config --global user.email ${GIT_USER_EMAIL}
-sed -i'' "s~git@github.com:4nbu/t3.git~https://${GH_TOKEN}:x-oauth-basic@github.com/4nbu/t3.git~" _config.yml
+sed -i'' "s~git@github.com:venbaa/t3.git~https://${GH_TOKEN}:x-oauth-basic@github.com/venbaa/t3.git~" _config.yml
 # cp -rf themes/blog_tranquilpeak/* themes/tranquilpeak
 # cd themes/tranquilpeak
 # npm install
