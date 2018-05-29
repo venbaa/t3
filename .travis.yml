@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- 8.9.1
+sudo: false
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm install hexo-cli -g
+install:
+- npm install
+branches:
+  only:
+  - source
+script:
+  - git config --global user.name ${GIT_USER_NAME}
+  - git config --global user.email ${GIT_USER_EMAIL}
+  - sed -i'' "s~git@github.com:4nbu/t3.git~https://${GH_TOKEN}:x-oauth-basic@github.com/4nbu/t3.git~" _config.yml
+  - hexo clean
+  - pwd #to identify present working directory
+  - mkdir public && mkdir public/admin
+  - cp source/admin/config.yml public/admin/config.yml
+  - hexo deploy
