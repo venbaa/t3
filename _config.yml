@@ -79,6 +79,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/venbaa/t3.git
+  repo: git@github.com:venbaa/t3.git
   branch: master
   message: Site updated at {{ now('YYYY-MM-DD HH:mm:ss') }} GMT [skip ci]
