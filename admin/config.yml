@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: source # Branch to update (optional; defaults to master)
+  name: github
+  repo: venbaa/t3   # Path to your Github repository
+  branch: source             # Branch to update
+base_url: https://tsttc.pw
 
 publish_mode: editorial_workflow
 
