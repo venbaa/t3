@@ -2,7 +2,7 @@ backend:
   name: github
   repo: venbaa/t3   # Path to your Github repository
   branch: source             # Branch to update
-base_url: https://tsttc.pw
+base_url: https://api.netlify.com
 
 publish_mode: editorial_workflow
 
