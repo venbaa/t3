@@ -7,17 +7,17 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Admin page">
+  <meta name="description" content="Admin page                    $(function() {       $(&quot;#login&quot;).on(&quot;click&quot;, function(e) {         e.preventDefault();         var authenticator = new netlify.default ({});         authentica">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="/admin/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Admin page">
+<meta property="og:description" content="Admin page                    $(function() {       $(&quot;#login&quot;).on(&quot;click&quot;, function(e) {         e.preventDefault();         var authenticator = new netlify.default ({});         authentica">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-29T09:11:26.611Z">
+<meta property="og:updated_time" content="2018-05-30T04:24:59.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Admin page">
+<meta name="twitter:description" content="Admin page                    $(function() {       $(&quot;#login&quot;).on(&quot;click&quot;, function(e) {         e.preventDefault();         var authenticator = new netlify.default ({});         authentica">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,7 +67,7 @@
         <section id="main"><article id="none-" class="article article-type-none" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/admin/index.html" class="article-date">
-  <time datetime="2018-05-29T09:11:26.650Z" itemprop="datePublished">2018-05-29</time>
+  <time datetime="2018-05-30T04:24:59.393Z" itemprop="datePublished">2018-05-30</time>
 </a>
     
   </div>
@@ -84,19 +84,36 @@
   <title>Admin page</title>
   <!-- Include the styles for the Netlify CMS UI, after your own styles -->
   <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!--script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script-->
+  <script src="https://unpkg.com/netlify-auth-providers"></script>
+  <script>
+    $(function() {
+      $("#login").on("click", function(e) {
+        e.preventDefault();
+        var authenticator = new netlify.default ({});
+        authenticator.authenticate({provider:"github", scope: "user"}, function(err, data) {
+          if (err) {
+            return $("#output").text("Error Authenticating with GitHub: " + err);
+          }
+          $("#output").text("Authenticated with GitHub. Access Token: " + data.token);
+        });
+      });
+    });
+  </script>
   </head>
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^1.0.0/dist/cms.js"></script>
-  <!-- Custom Preview using CSS -->
+  <h1>GitHub Auth</h1>
+  <p><a href="#" id="login">Authenticate</a></p>
+  <p id="output"></p>
 </body>
 </html>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="/admin/index.html" data-id="cjhrgq5370003vqs71xzqspa2" class="article-share-link">Share</a>
+      <a data-url="/admin/index.html" data-id="cjhslxpny0003vxprwhgr3vkg" class="article-share-link">Share</a>
       
       
     </footer>
